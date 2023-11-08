@@ -1,30 +1,29 @@
-@import './normalize.css';
+@import './normalize';
 @import 'src/app/styles/variables/global';
 @import 'src/app/styles/themes/normal';
 @import 'src/app/styles/themes/dark';
 
 .app {
-  font: var(--font-m);
-  background: var(--bg-color);
-  color: var(--primary-color);
-  min-height: 100vh;
-  will-change: background-color, color;
-  transition: var(--default-animte);
-
+    min-height: 100vh;
+    font: var(--font-m);
+    color: var(--primary-color);
+    background: var(--bg-color);
+    transition: var(--default-animte);
+    will-change: background-color, color;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 
 .page {
-  &-content {
-    flex-grow: 1;
-    padding: var(--padding-default);
-  }
+    &-content {
+        flex-grow: 1;
+        padding: var(--padding-default);
+    }
 
-  &-wrapper {
-    display: flex;
-  }
+    &-wrapper {
+        display: flex;
+    }
 }

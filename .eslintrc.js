@@ -3,7 +3,7 @@ module.exports = {
         'browser': true,
         es2021: true
     },
-    'extends': ['plugin:react/recommended'],
+    'extends': ['plugin:react/recommended', 'plugin:i18next/recommended'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -14,7 +14,7 @@ module.exports = {
         project: './tsconfig.json' // The error starts here
     },
 
-    'plugins': ['react', '@typescript-eslint'],
+    'plugins': ['react', '@typescript-eslint', 'i18next'],
     'rules': {
         indent: ['error', 4], // Отступы в 4 пробела
         'linebreak-style': 0,
@@ -51,6 +51,7 @@ module.exports = {
             before: false,
             after: true
         }],
+        'i18next/no-literal-string': ['error', { markupOnly: true }],
         quotes: ['error', 'single'], // Одинарные кавычки для строк
         semi: ['error', 'always'], // Всегда ставим точку с запятой
         'newline-after-var': ['error', 'always'], // Всегда переносим строку после разных сигнатур

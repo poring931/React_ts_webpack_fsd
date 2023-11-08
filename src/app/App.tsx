@@ -11,6 +11,7 @@ const App = () => {
 
     return (
         <div className={classNames('app page', {}, [theme])}>
+
             <Suspense fallback="">
                 <Navbar/>
                 <div className="page-wrapper">

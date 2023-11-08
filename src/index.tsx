@@ -9,10 +9,8 @@ render(
         <ThemeProvider>
             <App/>
         </ThemeProvider>
-    </BrowserRouter>
-    ,
+    </BrowserRouter>,
     document.querySelector('#root')
-)
-;
+);
 
 // 15 l[SuperSliv.biz] 15 i18n Интернационализация. Define plugin. Плагин для переводов

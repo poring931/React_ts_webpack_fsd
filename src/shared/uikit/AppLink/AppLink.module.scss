@@ -1,13 +1,14 @@
 .appLink {
-  display: flex;
-  color: var(--primary-color);
-  padding:0 20px;
-  &.primary{
-    color: var(--inverted-primary-color);
-  }
+    display: flex;
+    padding:0 20px;
+    color: var(--primary-color);
 
-  &.secondary{
-    color: var(--inverted-secondary-color);
-  }
+    &.primary{
+        color: var(--inverted-primary-color);
+    }
+
+    &.secondary{
+        color: var(--inverted-secondary-color);
+    }
 }
 

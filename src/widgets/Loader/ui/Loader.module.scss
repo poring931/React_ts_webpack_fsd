@@ -1,50 +1,51 @@
 .loader {
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    transform: translate(-50%,-50%);
+    gap: 8px;
 
-  .dot {
-    animation-fill-mode: forwards;
-    animation-name: busy;
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: ease-in;
-    height: 48px;
-    width: 48px;
-    background: radial-gradient(
-                    circle at 65% 15%,
-                    hsl(146, 85%, 90%) 1px,
-                    hsl(146, 85%, 61%) 3%,
-                    hsl(146, 85%, 41%) 60%,
-                    hsl(146, 85%, 21%) 100%
-    );
-    border-radius: 50%;
+    .dot {
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        background: radial-gradient(
+            circle at 65% 15%,
+            hsl(146deg 85% 90%) 1px,
+            hsl(146deg 85% 61%) 3%,
+            hsl(146deg 85% 41%) 60%,
+            hsl(146deg 85% 21%) 100%
+        );
+        animation-name: busy;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
 
-    &:nth-child(2) {
-      animation-delay: 0.25s;
+        &:nth-child(2) {
+            animation-delay: 0.25s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: 0.5s;
+        }
     }
-
-    &:nth-child(3) {
-      animation-delay: 0.5s;
-    }
-  }
 
 }
 
 
 @keyframes busy {
-  0% {
-    transform: translateY(0) scale(1);
-    filter: drop-shadow(0 32px 12px rgba(0, 0, 0, 0.05));
-  }
-  100% {
-    transform: translateY(100%) scale(0.75);
-    filter: drop-shadow(0 2px rgba(0, 0, 0, 0.25));
-  }
+    0% {
+        filter: drop-shadow(0 32px 12px rgb(0 0 0 / 5%));
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        filter: drop-shadow(0 2px rgb(0 0 0 / 25%));
+        transform: translateY(100%) scale(0.75);
+    }
 }
