@@ -18,9 +18,11 @@
     "esModuleInterop": true
   },
   "include": [
+    //    для eslinta, если ругается
     ".eslintrc.js",
     "./src/**/*",
-    "./config/build/*"
+    "./config/build/*",
+    "config/jest/jest.config.ts"
   ],
   "ts-node": {
     "compilerOptions": {
