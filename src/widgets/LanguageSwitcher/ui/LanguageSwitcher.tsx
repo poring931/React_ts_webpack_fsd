@@ -14,7 +14,7 @@ export const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
         i18n
     } = useTranslation();
 
-    const changeLanguage = () => {
+    const changeLanguage = async() => {
         i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en');
     };
 

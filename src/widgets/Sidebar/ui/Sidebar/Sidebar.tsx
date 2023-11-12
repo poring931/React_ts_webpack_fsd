@@ -3,6 +3,7 @@ import cls from './Sidebar.module.scss';
 import React, { useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher/ui/LanguageSwitcher';
+import { Button } from 'shared/uikit/Button/Button';
 
 interface SidebarProps {
     className?: string;
@@ -16,9 +17,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
     };
 
     return (
-        <div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
-            asdsa
-            <button onClick={onToggle}>toggle</button>
+        <div data-testid="sidebar" className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
+
+            <Button data-testid="sidebar-toggle" onClick={onToggle}>toggle</Button>
 
             <div className={cls.switchers}>
                 <ThemeSwitcher className={cls.theme}/>

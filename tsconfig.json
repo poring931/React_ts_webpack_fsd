@@ -18,11 +18,15 @@
     "esModuleInterop": true
   },
   "include": [
-    //    для eslinta, если ругается
-    ".eslintrc.js",
-    "./src/**/*",
-    "./config/build/*",
-    "config/jest/jest.config.ts"
+    "./config/jest/setupTests.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+//    //    для eslinta, если ругается, //исправил в eslint   tsconfigRootDir: __dirname,
+//    ".eslintrc.js",
+//    "./src/**/*",
+//    "./config/build/*",
+//    "./config/jest/*",
+//    "./.webpack.config.ts"
   ],
   "ts-node": {
     "compilerOptions": {

@@ -10,8 +10,8 @@ module.exports = {
             jsx: true
         },
         ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: './tsconfig.json' // The error starts here
+        sourceType: 'module', // project: './tsconfig.json' // The error starts here
+        tsconfigRootDir: __dirname,
     },
 
     'plugins': ['react', '@typescript-eslint', 'i18next'],
@@ -51,7 +51,10 @@ module.exports = {
             before: false,
             after: true
         }],
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': ['error', {
+            markupOnly: true,
+            ingoreAttribute: ['data-testid', 'to']
+        }],
         quotes: ['error', 'single'], // Одинарные кавычки для строк
         semi: ['error', 'always'], // Всегда ставим точку с запятой
         'newline-after-var': ['error', 'always'], // Всегда переносим строку после разных сигнатур
@@ -60,5 +63,14 @@ module.exports = {
             prev: '*',
             next: ['if', 'function', 'class']
         }] // Двойной перенос строки после блоков кода
-    }
+    },
+    globals: {
+        __IS_DEV__: true,
+    },
+    overrides: [{
+        files: ['**/src/**/*.test.{ts,tsx}'],
+        rules: {
+            'i18next/no-literal-string': 'off',
+        },
+    },],
 };

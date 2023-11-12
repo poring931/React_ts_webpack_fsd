@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 interface BugButtonProps {
     className?: string;
 }
+
 // для тестового вызова ошибки
 export const BugButton = ({ className }: BugButtonProps) => {
     const [error, setError] = useState(false);
@@ -17,9 +18,8 @@ export const BugButton = ({ className }: BugButtonProps) => {
     }, [error]);
 
     return (
-        <Button
-            onClick={onThrow}
-        >
+        // eslint-disable-next-line i18next/no-literal-string
+        <Button onClick={onThrow}>
             throw error
         </Button>
     );
