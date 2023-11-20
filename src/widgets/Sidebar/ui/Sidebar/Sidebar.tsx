@@ -19,6 +19,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
     return (
         <div data-testid="sidebar" className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
 
+            {/* eslint-disable-next-line i18next/no-literal-string */}
             <Button data-testid="sidebar-toggle" onClick={onToggle}>toggle</Button>
 
             <div className={cls.switchers}>
