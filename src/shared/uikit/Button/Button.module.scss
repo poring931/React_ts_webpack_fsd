@@ -1,12 +1,14 @@
 .button {
     background: transparent;
     cursor: pointer;
+    color: var(--primary-color);
 }
 
 .clear {
     outline: none;
     border: none;
     padding: 0;
+    color: var(--primary-color)
 }
 
 .outline {
