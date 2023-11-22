@@ -13,12 +13,10 @@ type Story = StoryObj<typeof Page404>;
 
 export const Normal: Story = {
     args: {
-        children: 'Text',
     },
 };
 export const Dark: Story = {
     args: {
-        children: 'Text',
     },
     decorators: [ThemeDecorator(Theme.DARK)],
 };

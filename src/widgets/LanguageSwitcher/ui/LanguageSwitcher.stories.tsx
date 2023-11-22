@@ -13,12 +13,10 @@ type Story = StoryObj<typeof LanguageSwitcher>;
 
 export const Normal: Story = {
     args: {
-        children: 'Text',
     },
 };
 export const Dark: Story = {
     args: {
-        children: 'Text',
     },
     decorators: [ThemeDecorator(Theme.DARK)],
 };
