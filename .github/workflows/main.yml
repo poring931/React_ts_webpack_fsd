@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: [18.x]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -23,7 +23,12 @@ jobs:
         run: npm run build:prod
       - name: linting typescript
         run: npm run lint:ts
-      - name: linting scss
+      - name: linting css
         run: npm run lint:scss
       - name: unit testing
         run: npm run test:unit
+      - name: build storybook
+        run: npm run storybook:build
+      - name: screenshot testing
+        run: npm run test:ui:ci
+
