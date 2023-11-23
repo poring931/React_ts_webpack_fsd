@@ -8,7 +8,9 @@ const MainPage = () => {
     return (
         <div>
             <BugButton/>
+            {/* eslint-disable-next-line i18next/no-literal-string */}
             {t('Главная страница')}
+            https://disk.yandex.ru/i/9TxnuFntA8L3zQ
         </div>
     );
 };

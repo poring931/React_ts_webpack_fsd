@@ -30,3 +30,19 @@
 .lang {
     color: var(--inverted-secondary-color)
 }
+
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+
+    .link {
+        margin-left: 10px;
+        opacity: 1;
+    }
+
+    .icon {
+        fill: var(--inverted-primary-color);
+    }
+
+}
