@@ -14,7 +14,7 @@ module.exports = {
         tsconfigRootDir: __dirname,
     },
 
-    'plugins': ['react', '@typescript-eslint', 'i18next'],
+    'plugins': ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
     'rules': {
         indent: ['error', 4], // Отступы в 4 пробела
         'linebreak-style': 0,
@@ -28,6 +28,8 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
         'react/function-component-definition': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
         'spaced-comment': ['error', 'always', { markers: ['/'] }],
         'array-bracket-spacing': ['error', 'never'],
         'brace-style': ['error', '1tbs'],
