@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { BugButton } from 'app/providers/ErrorBoundary';
+import { Counter } from 'entities/Counter';
 
 const MainPage = () => {
     const { t } = useTranslation('mainpage');
@@ -10,7 +11,7 @@ const MainPage = () => {
             <BugButton/>
             {/* eslint-disable-next-line i18next/no-literal-string */}
             {t('Главная страница')}
-            https://disk.yandex.ru/i/9TxnuFntA8L3zQ
+            <Counter/>
         </div>
     );
 };

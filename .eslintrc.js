@@ -30,6 +30,7 @@ module.exports = {
         'react/function-component-definition': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+        'no-param-reassign': 'off',
         'spaced-comment': ['error', 'always', { markers: ['/'] }],
         'array-bracket-spacing': ['error', 'never'],
         'brace-style': ['error', '1tbs'],

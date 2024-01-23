@@ -6,15 +6,17 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'app/providers/ThemeProvider';
 import 'shared/config/i18n/i18n';
 import ErrorBoundary from 'app/providers/ErrorBoundary/ui/ErrorBoundary';
+import { StoreProvider } from 'app/providers/StoreProvider';
 
 render(
-    <BrowserRouter>
-        <ErrorBoundary>
-            <ThemeProvider>
-                <App/>
-            </ThemeProvider>
-        </ErrorBoundary>
-    </BrowserRouter>,
-    document.querySelector('#root')
+    <StoreProvider>
+        <BrowserRouter>
+            <ErrorBoundary>
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
+            </ErrorBoundary>
+        </BrowserRouter>
+    </StoreProvider>, document.querySelector('#root')
 );
 
