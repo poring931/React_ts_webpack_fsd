@@ -3,10 +3,13 @@
 @import 'src/app/styles/themes/normal';
 @import 'src/app/styles/themes/dark';
 
-.app {
-    min-height: 100vh;
+body{
     font: var(--font-m);
     color: var(--primary-color);
+}
+
+.app {
+    min-height: 100vh;
     background: var(--bg-color);
     transition: var(--default-animte);
     will-change: background-color, color;
@@ -24,7 +27,7 @@
     }
 
     &-wrapper {
-        flex-grow: 1;
         display: flex;
+        flex-grow: 1;
     }
 }
