@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve --env port=3004",
     "start:dev:server": "node ./json-server/index.js",
-    "build:dev": "webpack --env mode=development",
+    "build:dev": "webpack --env mode=development port=2104",
     "build:prod": "webpack --env mode=production",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
@@ -96,6 +96,7 @@
   "dependencies": {
     "@react-buddy/ide-toolbox": "^2.4.0",
     "@reduxjs/toolkit": "^1.9.7",
+    "axios": "^1.6.7",
     "i18next": "^23.6.0",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.3.1",

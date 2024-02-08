@@ -4,10 +4,17 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
+import { useDispatch } from 'react-redux';
+import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice';
 // import { Modal } from 'shared/uikit/Modal/Modal';
 
 const App = () => {
     // const { theme } = useTheme();
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        dispatch(loginActions.setUsername('admin'));
+    }, [dispatch]);
 
     return (
         // <div className={classNames('app page', {}, [theme])}>

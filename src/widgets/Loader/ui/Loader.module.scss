@@ -1,5 +1,6 @@
 .loader {
-    display: inline-flex;
+    display:flex;
+    justify-content: center;
     flex-direction: row;
     align-items: center;
     gap: 8px;

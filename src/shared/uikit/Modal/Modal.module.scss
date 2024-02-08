@@ -6,7 +6,6 @@
     pointer-events: none;
     inset: 0;
 
-
 }
 
 
@@ -27,6 +26,9 @@
     transform: scale(0.5);
     transition: 0.3s transform;
     will-change: transform;
+    min-width: 250px;
+    min-height: 200px;
+
 }
 
 .opened {

@@ -18,6 +18,7 @@
     margin-top: auto;
     padding:var(--padding-default);
     gap: 20px;
+    position: relative;
 
 }
 
@@ -25,13 +26,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--inverted-primary-color);
+    position: absolute;
+    right:  0;
+    transform: translateX(100%);
+    bottom:0;
 }
 
 .lang {
     color: var(--inverted-secondary-color)
 }
 
+.disabled{
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+}
 
 .navigation {
     display: flex;
