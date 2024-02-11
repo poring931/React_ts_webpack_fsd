@@ -7,7 +7,7 @@ import { loginByUsername } from './loginByUsername';
 
 jest.mock('axios');
 
-const mockedAxios = jest.mocked(axios, true);
+const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe('loginByUsername.test', () => {
     // let dispatch: Dispatch;
@@ -43,7 +43,7 @@ describe('loginByUsername.test', () => {
     // });
 
     test('success login', async () => {
-        const userValue = { username: '123', id: '1' };
+        const userValue = { username: '123', id: 1 };
 
         mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }));
 
