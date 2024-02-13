@@ -22,6 +22,7 @@
 
 }
 
+
 .collapseBtn{
     display: flex;
     align-items: center;
@@ -29,7 +30,9 @@
     position: absolute;
     right:  0;
     transform: translateX(100%);
-    bottom:0;
+    bottom:var(--padding-default);
+
+
 }
 
 .lang {
@@ -52,24 +55,6 @@
     display: block;
 }
 
-.link{
-    display: flex;
-    align-items: center;
-    gap:5px;
-
-    &__text{
-        width: auto;
-        height: auto;
-        opacity: 1;
-        transition: 0.2s linear;
-        transition-delay:0.1s;
-    }
-
-    &__icon{
-        fill:var(--inverted-primary-color)
-    }
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
 
@@ -78,15 +63,4 @@
 
     }
 
-    .link{
-        justify-content: center;
-        gap:0
-    }
-
-    .link__text{
-        overflow: hidden;
-        width: 0;
-        height: 0;
-        opacity: 0;
-    }
 }

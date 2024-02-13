@@ -1,32 +1,32 @@
 :root {
-    --font-family-main: consolas, "Times New Roman", serif;
-    --font-size-m: 16px;
-    --font-line-m: 24px;
-    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
-    --font-size-l: 24px;
-    --font-line-l: 32px;
-    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
-    --font-size-xl: 32px;
-    --font-line-xl: 40px;
-    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
-    --navbar-height: 50px;
+  --font-family-main: consolas, "Times New Roman", serif;
+  --font-size-m: 16px;
+  --font-line-m: 24px;
+  --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+  --font-size-l: 24px;
+  --font-line-l: 32px;
+  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+  --font-size-xl: 32px;
+  --font-line-xl: 40px;
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+  --navbar-height: 50px;
 
-    //  Сайдбар
-    --sidebar-width: 300px;
-    --sidebar-width-collapsed: 80px;
+  //  Сайдбар
+  --sidebar-width: 300px;
+  --sidebar-width-collapsed: 80px;
 
-    //  Анимация
-    --default-animte: 0.25s ease-in-out;
+  //  Анимация
+  --default-animte: 0.25s ease-in-out;
 
-    // Spacings:
-    --padding-default: 20px;
+  // Spacings:
+  --padding-default: 20px;
 
 
-    // z-index
-    --modal-z-index: 10;
+  // z-index
+  --modal-z-index: 10;
 
-    //  Цвета
-    --overlay-color: rgba(0 0 0 / 60%);
-    --red-light: #f86a6a;
-    --red-dark: #f22d2d;
+  //  Цвета
+  --overlay-color: rgba(0 0 0 / 60%);
+  --red-light: #f86a6a;
+  --red-dark: #f22d2d;
 }

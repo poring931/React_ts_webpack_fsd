@@ -1,0 +1,35 @@
+.item{
+  display: flex;
+  align-items: center;
+  gap:5px;
+
+  &__text{
+    width: auto;
+    height: auto;
+    opacity: 1;
+    transition: 0.2s linear;
+    transition-delay:0.1s;
+  }
+
+  &__icon{
+    fill:var(--inverted-primary-color)
+  }
+}
+
+
+.collapsed {
+
+
+
+  &.item{
+    justify-content: center;
+    gap:0;
+    .item__text{
+      overflow: hidden;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+  }
+
+}

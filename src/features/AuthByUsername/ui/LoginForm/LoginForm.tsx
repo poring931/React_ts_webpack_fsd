@@ -3,13 +3,11 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './LoginForm.module.scss';
 import { Button, ButtonTheme } from 'shared/uikit/Button/Button';
 import { Input } from 'shared/uikit/Input/Input';
-import { useDispatch, useSelector, useStore } from 'react-redux';
-import { memo, useCallback, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { memo, useCallback } from 'react';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
-import { getLoginstate } from '../../model/selectors/getLoginstate/getLoginstate';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { Text, TextTheme } from 'shared/uikit/Text/Text';
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider/config/StateSchema';
 import { getLoginUserName } from '../../model/selectors/getLoginUserName/getLoginUserName';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
@@ -26,7 +24,10 @@ const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
+const LoginForm = memo(({
+    className,
+    onSuccess
+}: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const username = useSelector(getLoginUserName);
@@ -43,7 +44,10 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     }, [dispatch]);
 
     const onLoginClick = useCallback(async () => {
-        const result = await dispatch(loginByUsername({ username, password }));
+        const result = await dispatch(loginByUsername({
+            username,
+            password
+        }));
 
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
