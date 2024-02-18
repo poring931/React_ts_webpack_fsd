@@ -7,6 +7,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 export default function buildPlugins({
     paths,
+    apiUrl,
     isDev
 }: IBuildOptions): webpack.WebpackPluginInstance[] {
     return [
@@ -19,7 +20,8 @@ export default function buildPlugins({
             chunkFilename: 'css/[name].[contenthash:8].css'
         }),
         new webpack.DefinePlugin({
-            __IS_DEV__: JSON.stringify(isDev)
+            __IS_DEV__: JSON.stringify(isDev),
+            __API__: JSON.stringify(apiUrl),
         }),
         new ReactRefreshPlugin(),
         new webpack.HotModuleReplacementPlugin(),
