@@ -9,7 +9,8 @@ interface LanguageSwitcherProps {
     short?: boolean;
 }
 
-export const LanguageSwitcher = memo(({ className, short }: LanguageSwitcherProps) => {
+// eslint-disable-next-line react/display-name
+export const LanguageSwitcher = memo(({ className = '', short }: LanguageSwitcherProps) => {
     const {
         t,
         i18n

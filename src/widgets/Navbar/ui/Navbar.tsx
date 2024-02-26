@@ -11,7 +11,8 @@ interface NavbarProps {
     className?: string;
 }
 
-export const Navbar = memo(({ className }: NavbarProps) => {
+// eslint-disable-next-line react/display-name
+export const Navbar = memo(({ className = '' }: NavbarProps) => {
     const { t } = useTranslation();
 
     const [isAuthModal, setIsAuthModal] = React.useState(false);

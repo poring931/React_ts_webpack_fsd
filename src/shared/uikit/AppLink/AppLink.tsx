@@ -14,10 +14,11 @@ interface AppLinkProps extends LinkProps {
     children?: React.ReactNode;
 }
 
+// eslint-disable-next-line react/display-name
 export const AppLink = memo((props: AppLinkProps) => {
     const {
         to,
-        className,
+        className = '',
         children,
         theme = AppLinkTheme.PRIMARY,
         ...otherProps

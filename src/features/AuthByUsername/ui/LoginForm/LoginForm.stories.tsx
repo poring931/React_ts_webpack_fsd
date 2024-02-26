@@ -43,8 +43,6 @@ export const IsLoading: Story = {
     },
     decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
         loginForm: {
-            username: 'admin',
-            password: '123d',
             isLoading: true,
         }
     })],

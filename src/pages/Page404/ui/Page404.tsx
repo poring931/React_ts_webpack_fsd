@@ -5,7 +5,7 @@ interface Page404Props {
     className?: string;
 }
 
-export const Page404 = ({ className }: Page404Props) => {
+export const Page404 = ({ className = '' }: Page404Props) => {
     const { t } = useTranslation();
 
     return (

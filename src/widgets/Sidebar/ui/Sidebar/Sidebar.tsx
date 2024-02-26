@@ -11,12 +11,14 @@ interface SidebarProps {
     className?: string;
 }
 
-const component = ({ className }: SidebarProps) => {
+const component = ({ className = '' }: SidebarProps) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [collapsed, setCollapsed] = useState(false);
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const itemsList = useMemo(() => SidebarItemsList.map((item) => (
         <SidebarItem
             item={item}

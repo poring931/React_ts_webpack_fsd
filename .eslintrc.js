@@ -25,6 +25,7 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         'react/require-default-props': 'off',
+        'no-ndef': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
         'react/function-component-definition': 'off',

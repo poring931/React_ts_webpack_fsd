@@ -24,8 +24,9 @@ const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
+// eslint-disable-next-line react/display-name
 const LoginForm = memo(({
-    className,
+    className = '',
     onSuccess
 }: LoginFormProps) => {
     const { t } = useTranslation();
