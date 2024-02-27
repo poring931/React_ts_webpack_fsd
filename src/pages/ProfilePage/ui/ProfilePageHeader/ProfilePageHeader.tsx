@@ -4,7 +4,7 @@ import cls from './ProfilePageHeader.module.scss';
 import { Text } from 'shared/uikit/Text/Text';
 import { Button, ButtonTheme } from 'shared/uikit/Button/Button';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions } from 'entities/Profile';
+import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
@@ -30,8 +30,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     const onSave = useCallback(() => {
-        dispatch(profileActions.cancelEdit());
-        // dispatch(updateProfileData());
+        dispatch(updateProfileData());
     }, [dispatch]);
 
     return (
@@ -51,7 +50,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                     <>
                         <Button
                             className={cls.editBtn}
-                            theme={ButtonTheme.OUTLINE}
+                            theme={ButtonTheme.OUTLINE_RED}
                             onClick={onCancelEdit}
 
                         >
@@ -59,7 +58,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                         </Button>
                         <Button
                             className={cls.saveBtn}
-                            theme={ButtonTheme.OUTLINE_RED}
+                            theme={ButtonTheme.OUTLINE}
                             onClick={onSave}
 
                         >

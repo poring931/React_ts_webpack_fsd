@@ -1,22 +1,20 @@
-// import React from 'react';
-// import { ComponentMeta, ComponentStory } from '@storybook/react';
-// import { Select } from 'shared/ui/Select/Select';
-//
-// export default {
-//     title: 'shared/Select',
-//     component: Select,
-//     argTypes: {
-//         backgroundColor: { control: 'color' },
-//     },
-// } as ComponentMeta<typeof Select>;
-//
-// const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
-//
-// export const Primary = Template.bind({});
-// Primary.args = {
-//     label: 'Укажите значение',
-//     options: [
-//         { value: '123', content: 'Первый пункт' },
-//         { value: '1234', content: 'Второй пункт' },
-//     ],
-// };
+import type { Meta, StoryObj } from '@storybook/react';
+import { Select } from './Select';
+
+const meta: Meta<typeof Select> = {
+    component: Select,
+    title: 'Shared/Select',
+};
+
+export default meta;
+type Story = StoryObj<typeof Select>;
+
+export const Primary: Story = {
+    args: {
+        label: 'Укажите значение',
+        options: [
+            { value: '123', content: 'Первый пункт' },
+            { value: '1234', content: 'Второй пункт' },
+        ],
+    },
+};
