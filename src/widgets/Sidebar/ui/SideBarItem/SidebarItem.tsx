@@ -4,14 +4,23 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './SidebarItem.module.scss';
 import { SidebarItemType } from '../../model/items';
 import { AppLink, AppLinkTheme } from 'shared/uikit/AppLink/AppLink';
+import { getUserAuthData } from 'entities/User';
+import { useSelector } from 'react-redux';
 
 interface SidebarItemProps {
     item: SidebarItemType;
     collapsed: boolean;
 }
 
+// eslint-disable-next-line react/display-name
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     const { t } = useTranslation();
+
+    const isAuth = useSelector(getUserAuthData);
+
+    if (item.authOnly && !isAuth) {
+        return null;
+    }
 
     return (
         <AppLink

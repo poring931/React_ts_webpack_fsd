@@ -64,8 +64,12 @@ export const ProfileCard = (props: ProfileCardProps) => {
         );
     }
 
+    const mods: Record<string, boolean> = {
+        [cls.editing]: !readonly,
+    };
+
     return (
-        <div className={classNames(cls.ProfileCard, {}, [className])}>
+        <div className={classNames(cls.ProfileCard, mods, [className])}>
             <div className={cls.data}>
                 {data?.avatar && (
                     <div className={cls.avatarWrapper}>
