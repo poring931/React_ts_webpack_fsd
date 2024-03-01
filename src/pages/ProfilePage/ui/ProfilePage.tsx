@@ -10,12 +10,14 @@ import {
     getProfileError,
     getProfileForm,
     getProfileIsLoading,
-    getProfileReadonly,
+    getProfileReadonly, getProfileValidateErrors,
     profileActions,
     ProfileCard,
     profileReducer,
 } from 'entities/Profile';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
+import { Text, TextTheme } from 'shared/uikit/Text/Text';
+import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 
 interface ProfilePageProps {
     className?: string;
@@ -34,9 +36,20 @@ const ProfilePage = (props: ProfilePageProps) => {
     const readonly = useSelector(getProfileReadonly);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
+    const validateErrors = useSelector(getProfileValidateErrors);
+
+    const validateErrorTranslates = {
+        [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
+        [ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректный регион'),
+        [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
+        [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
+    };
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if(__PROJECT__ !== 'storybook'){
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const onChangeFirstname = useCallback((value?: string) => {
@@ -74,6 +87,11 @@ const ProfilePage = (props: ProfilePageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <ProfilePageHeader/>
+            {
+                validateErrors?.length && validateErrors.map((err: ValidateProfileError, i : number) => (
+                    <Text key={i} theme={TextTheme.ERROR} text={validateErrorTranslates[err]}/>
+                ))
+            }
             <ProfileCard
                 data={formData}
                 isLoading={isLoading}

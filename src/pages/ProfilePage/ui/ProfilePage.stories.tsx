@@ -3,6 +3,8 @@ import ProfilePage from './ProfilePage';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 
 const meta: Meta<typeof ProfilePage> = {
     component: ProfilePage,
@@ -13,15 +15,34 @@ export default meta;
 type Story = StoryObj<typeof ProfilePage>;
 
 export const Normal: Story = {
-    args: {
-        // children: 'Text',
-    },
-    decorators: [StoreDecorator({})],
-
+    args: {},
+    decorators: [StoreDecorator({
+        profile: {
+            form: {
+                username: 'admin',
+                age: 22,
+                country: Country.Russia,
+                lastname: 'kasdfv',
+                first: 'asd',
+                city: 'asf',
+                currency: Currency.USD,
+            }
+        }
+    })],
 };
 export const Dark: Story = {
-    args: {
-        // children: 'Text',
-    },
-    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})],
+    args: {},
+    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
+        profile: {
+            form: {
+                username: 'admin',
+                age: 22,
+                country: Country.Russia,
+                lastname: 'kasdfv',
+                first: 'asd',
+                city: 'asf',
+                currency: Currency.USD,
+            }
+        }
+    })],
 };
