@@ -4,16 +4,19 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice';
+import { getUserInited, userActions } from 'entities/User';
+import { useTheme } from 'app/providers/ThemeProvider';
 // import { Modal } from 'shared/uikit/Modal/Modal';
 
 const App = () => {
     // const { theme } = useTheme();
     const dispatch = useDispatch();
+    const inited = useSelector(getUserInited);
 
-    useEffect(()=>{
-        dispatch(loginActions.setUsername('admin'));
+    useEffect(() => {
+        dispatch(userActions.initAuthData());
     }, [dispatch]);
 
     return (
@@ -22,8 +25,8 @@ const App = () => {
             <Suspense fallback="">
                 <Navbar/>
                 <div className="page-wrapper">
-                    <Sidebar/>
-                    <AppRouter/>
+                    <Sidebar />
+                    {inited && <AppRouter />}
                 </div>
             </Suspense>
         </div>
