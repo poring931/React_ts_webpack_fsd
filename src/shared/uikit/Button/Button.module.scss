@@ -1,6 +1,14 @@
 .button {
     padding: 6px 15px;
     cursor: pointer;
+    @media (hover: hover) {
+        will-change: transform;
+
+        transition: 0.15s ease-in;
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
     &:disabled {
         opacity: 0.5;
         cursor: not-allowed;

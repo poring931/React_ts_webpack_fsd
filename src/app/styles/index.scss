@@ -11,7 +11,8 @@ body{
 }
 
 .app {
-    min-height: 100vh;
+    //min-height: 100vh;
+    height: 100dvh;
     background: var(--bg-color);
     transition: var(--default-animte);
     will-change: background-color, color;
@@ -28,6 +29,9 @@ a{
     &-content {
         flex-grow: 1;
         padding: var(--padding-default);
+        height: calc(100dvh - var(--navbar-height));
+        overflow: auto;
+        padding-bottom: 5dvh;
     }
 
     &-wrapper {

@@ -2,7 +2,14 @@
     //display: flex;
     padding:0 20px;
     color: var(--primary-color);
+    @media (hover: hover) {
+        will-change: transform;
 
+        transition: 0.15s ease-in;
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
     &.primary{
         color: var(--inverted-primary-color);
     }

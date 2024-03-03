@@ -6,6 +6,19 @@
   "404. Страница не найдена": "404. Page not found",
   "О нас": "About us",
   "Профиль": "Profile",
-  "Войти": "Enter"
+  "Войти": "Enter",
+  "Выйти": "Exit",
+  "О сайте": "About us",
+  "Статьи": "Articles",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Auth form",
+  "Вы ввели неверный логин или пароль": "Uncorrect username or password",
+  "Укажите валюту": "Choose currency",
+  "Укажите страну": "Choose country",
+  "Статья не найдена": "Статья не найдена",
+  "Произошла ошибка при загрузке статьи": {
+    "":  "An error occurred while loading the article."
+  }
 
 }
