@@ -6,7 +6,7 @@ interface BugButtonProps {
 }
 
 // для тестового вызова ошибки
-export const BugButton = ({ className }: BugButtonProps) => {
+export const BugButton = ({ className= '' }: BugButtonProps) => {
     const [error, setError] = useState(false);
 
     const onThrow = () => setError(true);

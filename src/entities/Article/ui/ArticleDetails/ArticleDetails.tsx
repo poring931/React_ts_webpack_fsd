@@ -27,7 +27,7 @@ import { Text } from 'shared/uikit/Text/Text';
 
 interface ArticleDetailsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {
@@ -35,7 +35,7 @@ const reducers: ReducersList = {
 };
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
-    const { className = '', id } = props;
+    const { className = '', id = '' } = props;
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getArticleDetailsIsLoading);
