@@ -18,6 +18,10 @@ import {
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Text, TextTheme } from 'shared/uikit/Text/Text';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
+import { classNames } from 'shared/lib/classNames/classNames';
+import cls from 'pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.module.scss';
 
 interface ProfilePageProps {
     className?: string;
@@ -37,6 +41,7 @@ const ProfilePage = (props: ProfilePageProps) => {
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{ id: string }>();
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
@@ -46,11 +51,11 @@ const ProfilePage = (props: ProfilePageProps) => {
         [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
     };
 
-    useEffect(() => {
-        if(__PROJECT__ !== 'storybook'){
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));

@@ -118,14 +118,28 @@
       "avatar": "https://klike.net/uploads/posts/2023-04/1680842236_3-96.jpg"
     }
   ],
-  "profile": {
-    "first": "Тимур23",
-    "lastname": "Ульби",
-    "age": 22,
-    "currency": "RUB",
-    "country": "Kazahstan",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Тимур23",
+      "lastname": "weqa",
+      "age": 22,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Прет",
+      "lastname": "Оцко",
+      "age": 32,
+      "currency": "RUB",
+      "country": "Kazahstan",
+      "city": "Moscow",
+      "username": "pepe",
+      "avatar": "https://klike.net/uploads/posts/2023-04/1680842236_3-96.jpg"
+    }
+  ]
 }
